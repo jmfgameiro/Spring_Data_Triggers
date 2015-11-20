@@ -30,7 +30,7 @@ private static final long serialVersionUID = 1L;
 	@GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "SQ_JMFGAMEIRO_JPA" )
 	@Column
 	private Long id;
-	@Column
+	@Column( nullable = false )
 	private String utilizador;
 	@Column( nullable = false )
 	private String code;
@@ -50,7 +50,8 @@ private static final long serialVersionUID = 1L;
 	
 	/***** CONSTRUCTOR *****/
 	public JmfgameiroEntity() {}
-	public JmfgameiroEntity( String code, Boolean fromVarchar, Boolean fromNumber ) {
+	public JmfgameiroEntity( String utilizador, String code, Boolean fromVarchar, Boolean fromNumber ) {
+		setUtilizador( utilizador );
 		setCode( code );
 		setFromVarchar( fromVarchar );
 		setFromNumber( fromNumber );
